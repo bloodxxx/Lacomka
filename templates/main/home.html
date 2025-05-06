@@ -1,3 +1,4 @@
+
 {% extends 'main/base.html' %}
 
 {% load static %}
@@ -6,6 +7,7 @@
 
 {% block content %}
 <div class="container py-5">
+
     <div class="row justify-content-center">
         <div class="col-md-8 text-center">
             <h1 class="mb-4">Магазин лакомств для животных</h1>
@@ -13,5 +15,44 @@
             <p>Мы — магазин, специализирующийся на продаже вкусных и полезных лакомств для домашних питомцев. У нас вы найдёте широкий ассортимент угощений для собак и кошек, чтобы порадовать вашего любимца каждый день!</p>
         </div>
     </div>
+
+    <!-- Широкий слайдер акций после текста -->
+    <div id="promoCarousel" class="carousel slide mt-5 mb-5" data-bs-ride="carousel" style="width: 100%;">
+        <div class="carousel-inner promo-carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/promo1.jpg' %}" class="d-block w-100 object-fit-cover" alt="Акция 1">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/promo2.jpg' %}" class="d-block w-100 object-fit-cover" alt="Акция 2">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/promo3.jpg' %}" class="d-block w-100 object-fit-cover" alt="Акция 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+        </button>
+    </div>
+    <!-- Конец слайдера акций -->
+
 </div>
+
+<style>
+    .promo-carousel-inner {
+        height: 450px;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+    .object-fit-cover {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+</style>
 {% endblock %}
